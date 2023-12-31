@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <div>
+    <form method="post" action="/" name="dog_form">
+      Name: <input type="text" name="name" id="name" /><br />
+      Gender: 
+      <input type="radio" name="gender" value="M" id="male" />
+      <label for="male">Male</label>
+      <input type="radio" name="gender" value="F" id="female" />
+      <label for="female">Female</label> <br>
+      Breed: <input type="text" name="breed" id="breed" /><br />
+      Age: <input type="number" name="age" id="age" min="0" step="1" required /><br />
+      Treat: <input type="text" name="treat" id="treat" /><br />
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+  <div id="dogs">
+    <ul>
+      <% dogs.forEach((dog) => { %>
+        <li>Name: <%= dog.name %></li>
+        <li>Gender: <%= dog.gender %></li>
+        <li>Breed: <%= dog.breed %></li>
+        <li>Age: <%= dog.age %></li>
+        <li>Treat: <%= dog.treat %></li>
+        <hr> <!-- Horizontal rule to separate dog information -->
+      <% }); %>
+    </ul>
+  </div>  
+  </body>
+</html>
